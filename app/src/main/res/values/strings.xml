@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Master Details</string>
+    <string name="no_passengers">No Passengers</string>
+    <string name="passenger_id">Passenger ID</string>
+    <string name="search_by_name">Search by name</string>
+    <string name="search_error">there is no such passenger name</string>
+    <string name="no_internet">Please check your internet connection</string>
+    <string name="network_error">Network error, could get data,please try again!</string>
+    <string name="refresh">refresh</string>
+    <string name="title_passengers">Passengers List</string>
+    <string name="title_passenger_details">Passenger Details</string>
+    <string name="passenger_name">Passenger Name</string>
+    <string name="no_passengers_name">No passengers with that name</string>
+    <string name="trip_no">Trips: </string>
+    <string name="airline_details">Airline Details</string>
+</resources>

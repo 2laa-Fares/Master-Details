@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="iamge">125dp</dimen>
+    <dimen name="bar_height">72dp</dimen>
+    <dimen name="min_text_height">25dp</dimen>
+
+    <dimen name="fab_height">24dp</dimen>
+
+    <dimen name="padding_6">6dp</dimen>
+
+    <dimen name="margin_2">2dp</dimen>
+    <dimen name="margin_8">8dp</dimen>
+    <dimen name="margin_16">16dp</dimen>
+
+    <dimen name="font_14x">14sp</dimen>
+    <dimen name="font_16x">16sp</dimen>
+    <dimen name="font_20x">20sp</dimen>
+</resources>

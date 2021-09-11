@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.MasterDetails" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/teal</item>
+        <item name="colorPrimaryVariant">@color/teal</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Define attr color. -->
+        <item name="textColor">@color/blue</item>
+        <item name="themedBackgroundColor">@color/white_gray</item>
+        <item name="toolbarBackgroundColor">@color/teal</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+
+        <!-- Text input fields -->
+        <item name="textInputStyle">@style/Widget.MasterDetails.FilledBox</item>
+        <!-- Text view -->
+        <item name="android:textViewStyle">@style/Widget.MasterDetails.TextView</item>
+        <!-- Buttons -->
+        <item name="buttonStyle">@style/Widget.MasterDetails.Button</item>
+        <!--Action bar style-->
+        <item name="android:actionBarStyle">@style/AppTheme.ActionBar</item>
+        <item name="actionBarStyle">@style/AppTheme.ActionBar</item>
+    </style>
+
+    <style name="Theme.MasterDetails.NoActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorOnPrimary">@color/blue</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/white_gray</item>
+        <!-- Define attr color. -->
+        <item name="textColor">@color/blue</item>
+        <item name="themedBackgroundColor">@color/white_gray</item>
+        <item name="toolbarBackgroundColor">@color/teal</item>
+    </style>
+</resources>
