@@ -5,6 +5,7 @@ import alaa.ewis.masterdetails.databinding.ActivityPassengersListBinding
 import alaa.ewis.masterdetails.utils.toGone
 import alaa.ewis.masterdetails.utils.toVisible
 import alaa.ewis.masterdetails.viewModel.PassengersListViewModel
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.ViewModelProvider
@@ -46,12 +47,21 @@ class PassengersListActivity : AppCompatActivity() {
                 viewModel.searchPassengers(binding.toolbar.searchLayout.searchEt.text.toString())
         }
 
+        binding.swipeRefresh.setOnRefreshListener{viewModel.getPassengers()}
+
+        // Go to handle passenger activity to add new passenger.
+        binding.addButton.setOnClickListener{
+            navigateToAddPassenger()
+        }
+
         // Show or hide progress depend on action back from ViewModel.
         viewModel.showProgress.observe(this, {
             if (it)
                 binding.pbLoading.toVisible()
-            else
+            else {
                 binding.pbLoading.toGone()
+                binding.swipeRefresh.isRefreshing = false
+            }
         })
 
         // Show or hide no passengers label depend on action back from ViewModel
@@ -59,9 +69,11 @@ class PassengersListActivity : AppCompatActivity() {
             if (it) {
                 binding.tvNoPassengers.toVisible()
                 binding.rvPassengersList.toGone()
+                binding.noPassengersImage.toVisible()
             } else {
                 binding.tvNoPassengers.toGone()
                 binding.rvPassengersList.toVisible()
+                binding.noPassengersImage.toGone()
             }
         })
 
@@ -91,5 +103,11 @@ class PassengersListActivity : AppCompatActivity() {
         binding.rvPassengersList.layoutManager = layoutManager
         binding.rvPassengersList.setHasFixedSize(true)
         adapter = PassengersAdapter(this)
+    }
+
+    // Navigate to new activity handle passenger to add new passenger.
+    private fun navigateToAddPassenger(){
+        val nextScreenIntent = Intent(this, HandlePassengerActivity::class.java)
+        startActivity(nextScreenIntent)
     }
 }

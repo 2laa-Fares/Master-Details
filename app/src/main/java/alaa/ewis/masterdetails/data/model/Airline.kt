@@ -1,10 +1,11 @@
 package alaa.ewis.masterdetails.data.model
 
 import io.realm.RealmObject
+import java.math.BigInteger
 
 // Passenger Airline details.
 open class Airline(
-    var id: Int = 0,
+    var id: String? = null,
     var name: String? = null,
     var country: String? = null,
     var logo: String? = null,

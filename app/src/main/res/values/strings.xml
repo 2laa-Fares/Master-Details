@@ -1,11 +1,17 @@
 <resources>
     <string name="app_name">Master Details</string>
     <string name="no_passengers">No Passengers</string>
+    <string name="no_passengers_toast">No Passengers to show</string>
     <string name="passenger_id">Passenger ID</string>
     <string name="search_by_name">Search by name</string>
     <string name="search_error">there is no such passenger name</string>
     <string name="no_internet">Please check your internet connection</string>
-    <string name="network_error">Network error, could get data,please try again!</string>
+    <string name="network_error">Network error, could not get data,please try again!</string>
+    <string name="bad_url_error">Resource does not exist!</string>
+    <string name="server_error">Internal Server Error, please try again!</string>
+    <string name="forbidden">Access to the resource is forbidden!</string>
+    <string name="service_unavailable">Cannot connect to server now! Please try again later!</string>
+    <string name="gateway_timeout">Access to that server timed out!</string>
     <string name="refresh">refresh</string>
     <string name="title_passengers">Passengers List</string>
     <string name="title_passenger_details">Passenger Details</string>
@@ -13,4 +19,18 @@
     <string name="no_passengers_name">No passengers with that name</string>
     <string name="trip_no">Trips: </string>
     <string name="airline_details">Airline Details</string>
+    <string name="add_passenger">Add Passengers</string>
+    <string name="edit_passenger">Edit Passengers</string>
+    <string name="add">Add</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+    <string name="name">Name</string>
+    <string name="name_error">Enter name!</string>
+    <string name="trip">Trip</string>
+    <string name="trip_error">Enter trip!</string>
+    <string name="airline">Airline</string>
+    <string name="airline_error">Select airline!</string>
+    <string name="offline">You are in offline mode. You cannot add or edit passenger data.</string>
+    <string name="added">Passenger added successfully.</string>
+    <string name="edited">Passenger data put successfully completed.</string>
 </resources>

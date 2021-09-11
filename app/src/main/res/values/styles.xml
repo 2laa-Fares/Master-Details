@@ -22,6 +22,15 @@
         <item name="backgroundTint">@color/teal</item>
     </style>
 
+    <style name="Widget.MasterDetails.Negative.Button" parent="Widget.MaterialComponents.Button.OutlinedButton">
+        <item name="android:textSize">@dimen/font_16x</item>
+        <item name="backgroundColor">?attr/themedBackgroundColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/teal</item>
+        <item name="strokeColor">@color/teal</item>
+        <item name="backgroundTint">?attr/themedBackgroundColor</item>
+    </style>
+
     <style name="AppTheme.ActionBar" parent="Widget.AppCompat.Light.ActionBar">
         <item name="android:titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>
         <item name="titleTextStyle">@style/AppTheme.ActionBar.TitleText</item>

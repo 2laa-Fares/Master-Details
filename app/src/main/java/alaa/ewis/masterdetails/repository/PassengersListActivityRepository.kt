@@ -1,13 +1,16 @@
 package alaa.ewis.masterdetails.repository
 
+import alaa.ewis.masterdetails.R
 import alaa.ewis.masterdetails.data.model.Passenger
 import alaa.ewis.masterdetails.data.model.Passengers
+import alaa.ewis.masterdetails.data.network.ErrorMapper
 import alaa.ewis.masterdetails.data.network.NetworkService
 import alaa.ewis.masterdetails.data.network.ServiceGenerator
 import alaa.ewis.masterdetails.data.offline.getDatabasePassengers
 import alaa.ewis.masterdetails.data.offline.saveDatabasePassengers
 import alaa.ewis.masterdetails.utils.isOnline
 import android.app.Application
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Callback
@@ -39,11 +42,20 @@ class PassengersListActivityRepository(val application: Application){
                     response: Response<Passengers>
                 ) {
                     showProgress.value = false
-                    passengersList.value = response.body()?.data
-                    if(passengersList.value != null && passengersList.value!!.isNotEmpty()){
-                        saveDatabasePassengers(application, passengersList.value!!)
-                        showNoPassenger.value = false
-                    } else{
+                    if(response.isSuccessful()) {
+                        passengersList.value = response.body()?.data
+                        if (passengersList.value != null && passengersList.value!!.isNotEmpty()) {
+                            saveDatabasePassengers(application, passengersList.value!!)
+                            showNoPassenger.value = false
+                        } else {
+                            getOfflinePassengers()
+                        }
+                    } else {
+                        Toast.makeText(
+                            application,
+                            ErrorMapper().getErrorString(response.code()),
+                            Toast.LENGTH_LONG
+                        ).show()
                         getOfflinePassengers()
                     }
                 }
@@ -89,6 +101,7 @@ class PassengersListActivityRepository(val application: Application){
         else {
             passengersSearchList.value = searchList
             showNoPassenger.value = true
+            Toast.makeText(application, application.getString(R.string.no_passengers_toast), Toast.LENGTH_LONG).show()
         }
         showProgress.value = false
     }
@@ -101,6 +114,7 @@ class PassengersListActivityRepository(val application: Application){
             showNoPassenger.value = false
         } else {
             showNoPassenger.value = true
+            Toast.makeText(application, application.getString(R.string.no_passengers_toast), Toast.LENGTH_LONG).show()
         }
         showProgress.value = false
     }

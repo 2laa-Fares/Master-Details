@@ -1,9 +1,6 @@
 package alaa.ewis.masterdetails.data.network
 
-import alaa.ewis.masterdetails.data.model.Airline
-import alaa.ewis.masterdetails.data.model.Passenger
-import alaa.ewis.masterdetails.data.model.PassengerEditResponse
-import alaa.ewis.masterdetails.data.model.Passengers
+import alaa.ewis.masterdetails.data.model.*
 import retrofit2.Call
 import retrofit2.http.*
 
@@ -25,10 +22,10 @@ interface NetworkService {
 
     // Add new passenger.
     @POST("passenger")
-    fun postPassenger(@Body passenger: Passenger): Call<Passenger>
+    fun postPassenger(@Body passenger: PassengerRequest): Call<Passenger>
 
 
     // Edit passenger data.
     @PUT("passenger/{id}")
-    fun putPassenger(@Path("id") id: String, @Body passenger: Passenger): Call<PassengerEditResponse>
+    fun putPassenger(@Path("id") id: String, @Body passenger: PassengerRequest): Call<PassengerEditResponse>
 }

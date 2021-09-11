@@ -3,6 +3,7 @@
     <dimen name="iamge">125dp</dimen>
     <dimen name="bar_height">72dp</dimen>
     <dimen name="min_text_height">25dp</dimen>
+    <dimen name="min_spinnerheight">50dp</dimen>
 
     <dimen name="fab_height">24dp</dimen>
 

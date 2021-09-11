@@ -23,7 +23,7 @@ class PassengersListViewModel (application: Application) : AndroidViewModel(appl
     }
 
     // Get passengers list to view it.
-    private fun getPassengers(){
+    fun getPassengers(){
         repository.getPassengers()
     }
 
