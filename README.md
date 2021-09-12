@@ -1,5 +1,5 @@
 # Master-Details
-MVVM Kotlin Application to show list of passengers and the details for every passenger.
+MVVM Kotlin Application to show a list of passengers and the details for every passenger.
 
 # About
 Master details app has been made for view passengers data and can edit it or add new passenger, It's a simple task by using Kotlin where mvvm pattern used and use realm database for offline access.
